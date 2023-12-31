@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Company Metrics Dashboard</title>
+    <link rel="stylesheet" href="s5.css">
+</head>
+<body>
+    <h1>Company Metrics</h1>
+    <header>
+
+        <div class="top-values">
+            <div class="value-box">
+                <span class="green-text">$406,411.29</span>
+                <p>Total Revenue</p>
+            </div>
+            <div class="value-box">
+                <span>$620</span>
+                <p>Total Jobs Avg</p>
+            </div>
+            <div class="value-box">
+                <span>$655</span>
+                <p>Tickets Created</p>
+            </div>
+            <div class="value-box">
+                <span>$735</span>
+                <p>Tickets Scheduled</p>
+            </div>
+            <div class="value-box">
+                <span class="red-text">$110,448.8</span>
+                <p>Outstanding Amount</p>
+            </div>
+            <div class="value-box">
+                <span>$105</span>
+                <p>Memberships Sold</p>
+            </div>
+            <div class="value-box">
+                <span>$436</span>
+                <p>Jobs Completed</p>
+            </div>
+            <div class="value-box">
+                <span>$65</span>
+                <p>Total Canceled</p>
+            </div>
+        </div>
+    </header>
+
+    <div class="section-container">
+        <h2>Revenue by Job Location</h2>
+        <div class="chart-container">
+            <canvas id="revenueLocationChart"></canvas>
+        </div>
+    </div>
+
+    <div class="section-container">
+        <h2>Revenue by Job Type</h2>
+        <div class="chart-container">
+            <canvas id="revenueTypeChart"></canvas>
+        </div>
+    </div>
+
+
+        <!-- <div class="top-values">
+                <div class="value-box">
+                    <span>$406,411.29</span>
+                    <p>Total Revenue</p>
+                </div>
+                <div class="value-box">
+                    <span>$620</span>
+                    <p>Total Jobs Avg</p>
+                </div>
+                <div class="value-box">
+                    <span>655</span>
+                    <p>Tickets Created</p>
+                </div>
+                <div class="value-box">
+                    <span>735</span>
+                    <p>Tickets Scheduled</p>
+                </div>
+        </div>
+         -->
+
+         <canvas id="barGraphCanvas" width="400" height="300"></canvas>
+
+         <script>
+             // Get the canvas element
+             var canvas = document.getElementById('barGraphCanvas');
+             var ctx = canvas.getContext('2d');
+         
+             // Bar graph data (you can modify this data)
+             var data = [20, 50, 80, 30, 60];
+         
+             // Bar graph properties
+             var barWidth = 50;
+             var barSpacing = 20;
+             var startX = 30;
+             var maxY = Math.max(...data) + 10;
+         
+             // Draw bars
+             for (var i = 0; i < data.length; i++) {
+                 var barHeight = (data[i] / maxY) * (canvas.height - 20);
+                 var x = startX + (barWidth + barSpacing) * i;
+                 var y = canvas.height - barHeight - 10;
+         
+                 ctx.fillStyle = 'blue';
+                 ctx.fillRect(x, y, barWidth, barHeight);
+         
+                 // Optional: Display data values on top of bars
+                 ctx.fillStyle = 'black';
+                 ctx.fillText(data[i], x + barWidth / 2 - 10, y - 5);
+             }
+         </script>
+         
+
+</body>
+</html>

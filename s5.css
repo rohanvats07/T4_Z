@@ -1,0 +1,66 @@
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 20px;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.top-values {
+    /* display: flex; */
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.total-revenue {
+    font-size: 2em;
+    font-weight: bold;
+}
+
+.other-values {
+    display: inline-flex;
+    gap: 20px;
+}
+
+.value-box {
+    background-color: #4e744b;
+    padding: 15px;
+    border-radius: 5px;
+    text-align: center;
+    /* display: inline-flex; */
+}
+
+main {
+    padding: 20px;
+}
+
+.revenue-charts {
+    display: flex;
+    gap: 20px;
+}
+
+.chart-container {
+    flex: 1;
+    background-color: #eee;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+h2 {
+    margin-bottom: 10px;
+}
+
+canvas {
+    width: 100%;
+    height: 250px;
+}
+
+/* Additional styles for specific elements and interactivity can be added later */
